@@ -7,13 +7,10 @@
                 <div class="content__title">
                     <h3>Điểm danh sinh viên</h3>
                     <div class="content__desc">
-                        @foreach ($danhSachDiemDanh['danhSachDiemDanh'] as $diemDanh)
-                            <label>Tên môn: {{ $diemDanh->TenMon }}</label>
-                        @endforeach
-
-                        @foreach ($danhSachDiemDanh['danhSachDiemDanh'] as $lop)
-                            <label>Lớp: {{ $lop->TenLop }}</label>
-                        @endforeach
+                        @if ($danhSachDiemDanh)
+                            <label>Tên môn: {{ $danhSachDiemDanh['diemDanh']->TenMon }}</label>
+                            <label>Lớp: {{ $danhSachDiemDanh['diemDanh']->TenLop }}</label>
+                        @endif
                     </div>
                 </div>
                 <hr class="seperator">
