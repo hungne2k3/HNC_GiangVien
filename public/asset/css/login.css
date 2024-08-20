@@ -1,0 +1,139 @@
+body,
+html {
+    height: 100%;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.left-container,
+.right-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.left-container {
+    width: 27.7vw;
+    background-color: #e0e0e0;
+    padding: 0 30px;
+}
+
+.logo-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.logo-container img {
+    margin-top: 64px;
+    height: 100px;
+    width: 100px;
+}
+
+.portal-name,
+.header {
+    margin-top: 20px;
+    color: #128080;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 32px;
+    font-weight: var(--fw-bold);
+    line-height: 1.4;
+}
+
+.header {
+    margin-top: 10px;
+}
+
+.right-container {
+    width: 72.3vw;
+    padding: 20px;
+}
+
+.login-form__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    border: 1px solid #CCC;
+    background: #FFF;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.16);
+    padding: 15px 60px;
+    width: 42%;
+    gap: 20px;
+}
+
+.login-form__title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #128080;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: var(--fw-bold);
+    line-height: 1.4;
+}
+
+.login-form-group {
+    display: flex;
+    width: 100%;
+    border: 1px solid #CCC;
+    border-radius: 4px;
+    background-color: #FFF;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.login-form__icon {
+    width: 15%;
+    border-right: 1px solid #CCC;
+    background-color: #EEE;
+    border-radius: 4px 0 0 4px;
+    background-color: #FFF;
+}
+
+.login__input {
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    font-size: var(--text-base);
+}
+
+.login__input::placeholder {
+    color: #CCC;
+}
+
+.login__button {
+    background-color: #128080;
+    color: #FFF;
+    cursor: pointer;
+    font-size: var(--text-base);
+    width: fit-content;
+    padding: 11px 20px;
+    font-weight: var(--fw-medium);
+}
+
+.footer--link,
+.footer__copyright {
+    color: rgba(0, 0, 0, 0.3);
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.footer--link {
+    font-size: 18px;
+}

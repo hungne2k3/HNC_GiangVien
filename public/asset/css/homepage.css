@@ -1,0 +1,21 @@
+/* About-us */
+.about-us {
+    border: none;
+}
+
+.about-us__title {
+    font-size: var(--text-xl);
+    font-weight: var(--fw-normal);
+    color: var(--text-black);
+    margin: 40px 0 10px 0;
+    line-height: var(--leading-snug);
+}
+
+.about-us__detail {
+    color: var(--text-gray-700);
+    font-size: var(--text-base);
+    font-weight: var(--fw-normal);
+    margin-top: 10px;
+    line-height: 32px;
+    text-align: justify;
+}

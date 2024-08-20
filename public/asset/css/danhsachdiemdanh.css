@@ -1,0 +1,49 @@
+[type="date"] {
+  background: #fff url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png) 97% 50% no-repeat;
+}
+
+[type="date"]::-webkit-inner-spin-button {
+  display: none;
+}
+
+[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
+
+/* custom styles */
+label {
+  display: block;
+}
+
+input#dateofbirth {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  padding: 3px 5px;
+  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.1);
+  width: 120px;
+  padding: 5px 5px;
+}
+
+input#dateofbirth:focus {
+  outline: 2px solid var(--text-primary);
+}
+
+.table-list {
+  margin-top: 5px;
+  margin-bottom: 40px;
+}
+
+.btn__action {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  bottom: 0;
+  left: 0;
+  padding: 10px 0;
+  z-index: 999;
+  width: 100%;
+  background-color: #fff;
+  border-top: 1px solid #eee;
+}

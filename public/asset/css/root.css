@@ -1,0 +1,15 @@
+:root {
+  --colorDefault: #128080;
+  --colorExcell: #5cb85c;
+  --colorInput: #000;
+  --colorImport: #5bc0de;
+  --background-color: #128080;
+  --paddingLeft: 254px;
+  --paddingRightContent: 254px;
+  --paddingRight: 475px;
+  --paddingLeftDefault: 20;
+  --paddingRightDefault: 20;
+}
+
+.bgc-primary {background-color: var(--colorDefault);}
+.c-primary {color: var(--colorDefault);}
