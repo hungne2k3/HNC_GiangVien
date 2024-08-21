@@ -21,6 +21,7 @@ Route::middleware(['auth', 'lecturer'])->group(function () {
     Route::post('/save-rollCall', [ListRollCallController::class, 'saveRollCall'])->name('save.rollcall');
 
     // import
+    Route::post('/import-rollcall', [StudentAttendanceController::class, 'import'])->name('import.rollcall');
     // export
     Route::get('/export-rollcall/{monHocKyId}', [StudentAttendanceController::class, 'export'])->name('export.rollcall');
 });
