@@ -79,7 +79,8 @@
                                     <td><a href="/danh-sach-diem-danh/{{ $item->id }}"
                                             class="btn btn--secondary table__btn ">ĐDSV</a></td>
                                     <td><button class="btn btn--info table__btn">Import ĐD</button></td>
-                                    <td><button class="btn btn--success table__btn">Export ĐD</button></td>
+                                    <td><a href="{{ route('export.rollcall', ['monHocKyId' => $item->id]) }}"
+                                            class="btn btn--success table__btn">Export ĐD</a></td>
                                 </tr>
                             @endforeach
                         </tbody>
