@@ -1,12 +1,11 @@
 <x-guest-layout>
+    <link rel="stylesheet" href="{{ asset('asset/css/login.css') }}">
+    <link rel="stylesheet" href="{{ asset('asset/css/library.css') }}">
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
-
+    <!-- Form Login -->
     <div class="login-form__wrapper">
-        <form method="POST" action="{{ route('login') }}"
-            style="    border: 1px solid #ccc;
-    padding: 40px;
-    border-radius: 10px;">
+        <form method="POST" action="{{ route('login') }}" class="login-form">
             @csrf
             <div class="login-form__title">Đăng nhập hệ thống</div>
             <!-- MaGV  -->
@@ -19,18 +18,8 @@
                             fill="#555555" />
                     </svg>
                 </div>
-
-                <div>
-                    <x-text-input
-                        style="border: none;
-                                            font-size: 15px;
-                                            box-shadow: none !important; outline: none;"
-                        id="MaGV" class="block mt-1 w-full" type="text" name="MaGV" :value="old('MaGV')"
-                        required autofocus placeholder="Tên đăng nhập" autocomplete="username" />
-                </div>
-            </div>
-            <div>
-                <x-input-error style="font-size: 12px; color: red" :messages="$errors->get('MaGV')" class="mt-2" />
+                <x-text-input id="MaGV" class="login__input" type="text" name="MaGV" :value="old('MaGV')"
+                required autofocus placeholder="Tên đăng nhập" autocomplete="username" />
             </div>
 
             <!-- Password -->
@@ -43,26 +32,17 @@
                             fill="#555555" />
                     </svg>
                 </div>
-                <div>
-                    <x-text-input
-                        style="border: none;
-                                        font-size: 15px;
-                                        box-shadow: none !important; outline: none;"
-                        id="password" class="block mt-1 w-full" type="password" name="password" required
-                        placeholder="Mật khẩu" autocomplete="current-password" />
-                </div>
+                <x-text-input id="password" class="login__input" type="password" name="password" required
+                    placeholder="Mật khẩu" autocomplete="current-password" />
             </div>
-            <div>
-                <x-input-error style="font-size: 12px; color: red" :messages="$errors->get('password')" class="mt-2" />
+            <div style="height: 10px; width: 100%; position: relative">
+                <x-input-error style="font-size: 12px; color: red" :messages="$errors->get('MaGV')" class="error-message" />
+                <x-input-error style="font-size: 12px; color: red position: relative;" :messages="$errors->get('password')" class="error-message" />        
             </div>
-
-            <div class="flex items-center justify-center mt-4">
-                <x-primary-button style="font-size: 12px;
-    padding: 12px 10px !important;"
-                    class="block btn btn-success mb-4">
-                    {{ __('Đăng nhập') }}
-                </x-primary-button>
-            </div>
+            <x-primary-button class="btn btn--primary login__button">
+                {{ __('Đăng nhập') }}
+            </x-primary-button>
         </form>
     </div>
+    {{-- <h2>{{ $data->name }}</h2> --}}
 </x-guest-layout>

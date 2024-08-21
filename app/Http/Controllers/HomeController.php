@@ -9,7 +9,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $title = 'Trang Chủ';
+        $title = 'Giới Thiệu';
 
         return view('Lecturer.Layouts.Home.home', compact('title'));
     }

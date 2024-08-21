@@ -35,8 +35,8 @@
             "Tests\\": "tests/"
         },
         "files": [
-            "app/Http/Services/StudentAttendanceServices.php",
-            "app/Http/Services/ListRollCallServices.php"
+            "app/Http/Services/ListRollCallServices.php",
+            "app/Http/Services/studentAttendanceServices.php"
         ]
     },
     "scripts": {

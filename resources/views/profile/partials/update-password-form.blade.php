@@ -23,26 +23,26 @@
                             name="current_password" autocomplete="current-password">
 
                     </div>
-                    <x-input-error style="color: red; font-size: 13px" :messages="$errors->updatePassword->get('current_password')" class="mt-2" />
+                    
 
                     <div class="form-group">
                         <label for="update_password_password">Mật khẩu mới</label>
                         <input type="password" name="password" class="form__input input-new-password"
                             id="update_password_password" autocomplete="new-password">
                     </div>
-                    <x-input-error style="color: red; font-size: 13px" :messages="$errors->updatePassword->get('password')" class="mt-2" />
-
                     <div class="form-group">
                         <label for="update_password_password_confirmation">Xác nhận mật khẩu</label>
                         <input name="password_confirmation" type="password" autocomplete="new-password"
                             class="form__input input-confirm-password" id="update_password_password_confirmation">
                     </div>
-                    <x-input-error style="color: red; font-size: 13px" :messages="$errors->updatePassword->get('password_confirmation')" class="mt-2" />
-
+                    <div style="height: 10px; width: 100%; position: relative; text-align: left; margin-top: -15px">
+                        <x-input-error style="color: red; font-size: 13px; margin-top: 5px" :messages="$errors->updatePassword->get('current_password')" class="error-message" />
+                    </div>
                     <!-- Footer modal -->
                     <div class="btn-action">
-                        <button type="submit" class="btn modal__btn btn-save">Lưu</button>
-                    </div>
+                        <button class="btn modal__btn btn-save">Lưu</button>
+                        <a href="/home" class="btn modal__btn btn-cancel">Huỷ</a>
+                     </div>
                 </form>
             </div>
         </div>

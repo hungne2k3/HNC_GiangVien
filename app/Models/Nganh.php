@@ -19,6 +19,7 @@ class Nganh extends Model
         'GhiChu'
     ];
 
+    // Các mối quan hệ giữa các bảng: hasOne(1), belongsTo(1), hasMany(n)
     public function lop()
     {
         return $this->hasOne(Lop::class, 'Nganh_ID', 'Nganh_ID');
