@@ -29,4 +29,9 @@ class DanhSachMonHoc extends Model
     {
         return $this->belongsTo(Nganh::class, 'Nganh_ID', 'Nganh_ID');
     }
+
+    public function danhsach_diemdanh()
+    {
+        return $this->hasMany(DanhSachDiemDanh::class, 'MaMonHoc');
+    }
 }
