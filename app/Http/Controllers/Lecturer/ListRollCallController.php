@@ -16,6 +16,7 @@ class ListRollCallController extends Controller
     {
         $this->listRollCallServices = $listRollCallServices;
     }
+
     public function index(Request $request, $monHocKyId)
     {
         $title = 'Danh sách điểm danh';

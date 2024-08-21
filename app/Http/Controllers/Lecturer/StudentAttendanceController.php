@@ -6,6 +6,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Services\StudentAttendanceServices;
 use App\Exports\DanhSachDiemDanhExport;
+use App\Models\DanhSachDiemDanh;
+use PhpOffice\PhpSpreadsheet\IOFactory;
+use Illuminate\Support\Facades\Log;
 
 class StudentAttendanceController extends Controller
 {
@@ -39,6 +42,42 @@ class StudentAttendanceController extends Controller
         $getDataInfo = $this->studentAttendanceServices->getDataInfo($filters);
 
         return view('Lecturer.Layouts.StudentAttendance.diemDanhSinhVien', compact('title', 'getDataInfo'));
+    }
+
+    public function import(Request $request)
+    {
+        $file = $request->file('import_file');
+
+        // Đây là một phương thức trong lớp IOFactory được sử dụng để tải (load) một tệp Excel vào bộ nhớ
+        $spreadsheet = IOFactory::load($file->getRealPath());
+
+        // dùng để lấy ra trang tính (worksheet) hiện đang được kích hoạt trong một tệp Excel.
+        $sheet = $spreadsheet->getActiveSheet();
+        $rows = $sheet->toArray();
+
+        foreach ($rows as $index => $row) {
+            if ($index === 0)
+                continue;
+
+            try {
+                DanhSachDiemDanh::create([
+                    'MaSV' => $row[1],
+                    'HoTen' => $row[2],
+                    'MonHoc' => $row[3],
+                    'TenLop' => $row[4],
+                    'NgayDiemDanh' => $row[5],
+                    'Ca' => $row[6],
+                    'Tiet' => $row[7],
+                    'SoTietDiMuon' => $row[8],
+                    'GhiChu' => $row[9],
+                ]);
+            } catch (\Exception $e) {
+                Log::error("Error creating record for student: " . $row[1] . " - " . $e->getMessage());
+                continue;
+            }
+        }
+
+        return redirect()->back()->with(toastify()->success('Import thành công!'));
     }
 
     public function export($monHocKyId)

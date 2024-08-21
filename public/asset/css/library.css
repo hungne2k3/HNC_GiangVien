@@ -536,6 +536,33 @@ body.no-scroll {
 
 .table.table--secondary {}
 
+.custom-file-upload {
+  display: flex;
+  align-items: center;
+}
+
+.custom-file-upload input[type="file"] {
+  display: none;
+  /* Ẩn trường nhập file mặc định */
+}
+
+.custom-file-upload label {
+  cursor: pointer;
+  /* Thay đổi con trỏ chuột khi di chuột qua nút */
+  margin-right: 10px;
+  /* Tạo khoảng cách giữa nhãn và nút import */
+  display: inline-block;
+  padding: 6px 12px;
+  color: #fff;
+  background-color: #17a2b8;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.custom-file-upload label:hover {
+  background-color: #138496;
+}
+
 .table__btn {
   font-size: 14px;
   padding: 8px 10px;
