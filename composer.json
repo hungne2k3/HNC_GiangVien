@@ -10,8 +10,9 @@
     "require": {
         "php": "^8.2",
         "laravel/breeze": "^2.0",
-        "laravel/framework": "^11.0",
+        "laravel/framework": "^10.0",
         "laravel/tinker": "^2.9",
+        "maatwebsite/excel": "^1.1",
         "redot/laravel-toastify": "^1.0"
     },
     "require-dev": {
