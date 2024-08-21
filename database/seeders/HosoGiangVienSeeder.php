@@ -50,7 +50,7 @@ class HosoGiangVienSeeder extends Seeder
                 'ChieuCao' => '168 cm',
                 'CanNang' => '53 kg',
                 'NhomMau' => 'O',
-                'HinhAnh' => 'huy.jpg',
+                'HinhAnh' => 'default-profile.png',
                 'LoaiGV' => 'Giảng viên chính thức',
                 'Nganh_ID' => 1, // ID của ngành tương ứng
                 'CREATEO_BY' => 'admin',

@@ -36,7 +36,9 @@
         },
         "files": [
             "app/Http/Services/ListRollCallServices.php",
-            "app/Http/Services/studentAttendanceServices.php"
+            "app/Http/Services/studentAttendanceServices.php",
+            "app/Http/Services/UserServices.php",
+            "app/Http/Services/UploadServices.php"
         ]
     },
     "scripts": {

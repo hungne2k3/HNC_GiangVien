@@ -51,7 +51,7 @@
                                 {{ Auth::user()->HoDem . ' ' . Auth::user()->Ten }}
                             </a>
                             <ul class="dropdown-menu">
-                                <li class="dropdown__item"><a href="#"
+                                <li class="dropdown__item"><a href="/profile"
                                         class="link link--black dropdown--link">Thông tin cá nhân</a>
                                 </li>
 
@@ -75,7 +75,7 @@
                                                 :href="route('logout')"
                                                 onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                                                <svg height="14px" width="14px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 30.143 30.143" xml:space="preserve" fill="#000000">
+                                                <svg style="margin-left: 2px" height="14px" width="14px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 30.143 30.143" xml:space="preserve" fill="#000000">
                                                     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                                                         <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
                                                             <g id="SVGRepo_iconCarrier"> <g> 

@@ -14,11 +14,17 @@ class LecturerMiddleware
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
+
+    // Định nghĩa lớp middleware
     public function handle(Request $request, Closure $next): Response
     {
+        // Kiểm tra xem người dùng đã đăng nhập hay chưa
         if (Auth::user()) {
+            // Nếu người dùng đã đăng nhập, tiếp tục xử lý yêu cầu
             return $next($request);
         }
+
+        // Nếu người dùng chưa đăng nhập, chuyển hướng về trang trước đó
         return redirect()->back();
     }
 }
