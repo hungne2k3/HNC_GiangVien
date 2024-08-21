@@ -35,7 +35,7 @@ class ListRollCallController extends Controller
 
         $danhSachDiemDanh = $this->listRollCallServices->getDataDiemDanh($monHocKyId);
 
-        return view('Lecturer.Layouts.ListRollCall.danhSachDiemDanh', compact('title', 'currentDate', 'danhSachDiemDanh'));
+        return view('Lecturer.Layouts.ListRollCall.danhSachDiemDanh', compact('title', 'currentDate', 'danhSachDiemDanh', 'monHocKyId'));
     }
 
     public function saveRollCall(Request $request)

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Lecturer;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Services\StudentAttendanceServices;
+use App\Exports\DanhSachDiemDanhExport;
 
 class StudentAttendanceController extends Controller
 {
@@ -15,13 +16,13 @@ class StudentAttendanceController extends Controller
         $this->studentAttendanceServices = $studentAttendanceServices;
     }
 
-    public function index(Request $request)
+    public function index(Request $request, $monHocKyId = null)
     {
         $title = 'Điểm danh sinh viên';
 
         $getDataInfo = $this->studentAttendanceServices->getDataInfo();
 
-        return view('Lecturer.Layouts.StudentAttendance.diemDanhSinhVien', compact('title', 'getDataInfo'));
+        return view('Lecturer.Layouts.StudentAttendance.diemDanhSinhVien', compact('title', 'getDataInfo', 'monHocKyId'));
     }
 
     public function filters(Request $request)
@@ -38,5 +39,12 @@ class StudentAttendanceController extends Controller
         $getDataInfo = $this->studentAttendanceServices->getDataInfo($filters);
 
         return view('Lecturer.Layouts.StudentAttendance.diemDanhSinhVien', compact('title', 'getDataInfo'));
+    }
+
+    public function export($monHocKyId)
+    {
+        // Khởi tạo đối tượng DanhSachDiemDanhExport và gọi phương thức export
+        $export = new DanhSachDiemDanhExport();
+        return $export->export($monHocKyId);
     }
 }

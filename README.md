@@ -72,6 +72,8 @@ php artisan serve
 ```
 Truy cập ứng dụng thông qua trình duyệt web tại địa chỉ sau: **http://localhost:8000**
 
+
+
 **Quy chuẩn**<br>
 1. Quy tắc đặt tên branch:<br>
 Đối với feature: `feature/user/feature-name`<br>
@@ -86,7 +88,4 @@ vd: -m "add Authencation #a17"
 **Tác giả**<br>
 Dự án được phát triển bởi team sinh viên khoa CNTT HPC.
 
-**Liên hệ**<br>
-Nếu bạn có bất kỳ câu hỏi hoặc đề xuất nào, vui lòng liên hệ qua email nguyenhieu157380@gmail.com
-/**
 
