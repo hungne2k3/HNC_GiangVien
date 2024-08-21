@@ -69,14 +69,15 @@
                         <tbody class="text-center">
                             @foreach ($getDataInfo['dataInfo'] as $index => $item)
                                 <tr class="tr__title">
-                                    <td>{{ $index }}</td>
+                                    <td>{{ $index + 1 }}</td>
                                     <td>{{ $item->TenMon }}</td>
                                     <td>{{ $item->TenLop }}</td>
                                     <td>{{ $item->HoDem }} {{ $item->Ten }}</td>
                                     <td>{{ $item->SoTiet }}</td>
                                     <td>50</td>
                                     <td>{{ $item->SoTin }}</td>
-                                    <td><a href="/danh-sach-diem-danh" class="btn btn--secondary table__btn ">ĐDSV</a></td>
+                                    <td><a href="/danh-sach-diem-danh/{{ $item->id }}"
+                                            class="btn btn--secondary table__btn ">ĐDSV</a></td>
                                     <td><button class="btn btn--info table__btn">Import ĐD</button></td>
                                     <td><button class="btn btn--success table__btn">Export ĐD</button></td>
                                 </tr>

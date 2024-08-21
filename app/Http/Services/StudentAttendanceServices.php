@@ -71,11 +71,13 @@ class StudentAttendanceServices
             ->join('hoso_giangvien', 'giangvien_monhoc.MaGV', '=', 'hoso_giangvien.MaGV')
             ->select(
                 'danhsach_monhoc.TenMon',
+                'danhsach_monhoc.MaMonHoc',
                 'danhsach_monhoc.SoTin',
                 'danhsach_monhoc.SoTiet',
                 'hoso_giangvien.HoDem',
                 'hoso_giangvien.Ten',
-                'lop.TenLop'
+                'lop.TenLop',
+                'monhoc_ky.id'
             )
             ->where('hoso_giangvien.MaGV', $maGV)
             ->distinct();
