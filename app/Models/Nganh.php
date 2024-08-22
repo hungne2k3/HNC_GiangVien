@@ -11,6 +11,7 @@ class Nganh extends Model
 
     // Bảng Ngành
     protected $table = 'tb_nganh';
+    protected $primaryKey = 'id'; // Khóa chính
 
     protected $fillable = [
         'id',

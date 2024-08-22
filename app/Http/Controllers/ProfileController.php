@@ -2,10 +2,12 @@
 // app/Http/Controllers/LecturerController.php
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use App\Models\Nganh;
 use Illuminate\Http\Request;
 use App\Http\Services\UserServices;
-use App\Http\Services\UploadServices;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Services\UploadServices;
 use Illuminate\Support\Facades\Storage;
 
 
@@ -25,10 +27,13 @@ class ProfileController extends Controller
     {
         // Lấy thông tin giảng viên từ Service
         $giangVien = $this->userServices->lecturerInfomation();
-
+        $nganh = $this->userServices->getNganh();
+        
+        // dd($giangVien);
         return view('profile.thongtinGiangvien', [
             'title' => 'Thông tin giảng viên',
-            'hoSo' => $giangVien
+            'giangVien' => $giangVien,
+            'nganh' => $nganh
         ]);
     }
 
@@ -39,7 +44,6 @@ class ProfileController extends Controller
             'file' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
-        $giangVien = Auth::user(); // Lấy giảng viên hiện tại
         $giangVien = $this->userServices->lecturerInfomation();
         $imagePath = $this->uploadServices->store($request);
 

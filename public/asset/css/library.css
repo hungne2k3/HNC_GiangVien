@@ -161,6 +161,10 @@ h6,
   border-radius: 4px;
 }
 
+.root {
+  margin-top: 56px;
+}
+
 /* Handle scrollbar created */
 body.no-scroll {
   overflow: hidden;
@@ -395,10 +399,11 @@ body.no-scroll {
   justify-content: center;
   font-size: var(--text-base);
   font-weight: var(--fw-normal);
-  position: sticky;
+  position: fixed;
   top: 0;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
   z-index: 9;
+  width: 100%;
 }
 
 .navbar {
@@ -534,7 +539,7 @@ body.no-scroll {
   margin-top: 5rem;
 }
 
-.table.table--secondary {}
+/* .table.table--secondary {} */
 
 .table__btn {
   font-size: 14px;

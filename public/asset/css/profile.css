@@ -24,3 +24,71 @@
     visibility: visible;
     opacity: 1;
 }
+
+.per_form-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.p-1 {
+    width: 25%;
+    padding: 6px 5px;
+}
+.p-2 {
+    width: 50%;
+    padding: 6px 5px;
+}
+.p-4 {
+    width: 100%;
+    padding: 6px 5px;
+}
+
+.info-common, .info-professional-level, .info-health-condition {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 15px;
+}
+
+.info-professional-level, .info-health-condition {
+    margin-top: 20px;
+}
+
+.form__title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.text-red-600 {
+    font-weight: 600;
+    color: #dc2626;
+    margin-right: 2px;
+}
+
+.form-group__lable {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #128080;
+}
+
+input.form-input {
+    border:none;
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    padding: 8px;
+    background-color: ghostwhite;
+  }
+  
+input.form-input:focus {
+    outline: 2px solid var(--text-primary);
+}
+
+input.disable {
+    background-color: ghostwhite;
+}

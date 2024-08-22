@@ -84,7 +84,7 @@ class User extends Authenticatable
 
     public function tb_nganh()
     {
-        return $this->belongsTo(Nganh::class, 'Nganh_ID', 'Nganh_ID');
+        return $this->belongsTo(Nganh::class, 'Nganh_ID', 'id');
     }
 
     public function lop()
