@@ -36,16 +36,12 @@
             "Tests\\": "tests/"
         },
         "files": [
-<<<<<<< HEAD
             "app/Http/Services/ListRollCallServices.php",
             "app/Http/Services/studentAttendanceServices.php",
             "app/Http/Services/UserServices.php",
-            "app/Http/Services/UploadServices.php"
-=======
-            "app/Http/Services/StudentAttendanceServices.php",
+            "app/Http/Services/UploadServices.php",
             "app/Http/Services/ListRollCallServices.php",
             "app/Exports/DanhSachDiemDanhExport.php"
->>>>>>> e23fb0a4c0082a9f6b8289c9a92e2f808d47b569
         ]
     },
     "scripts": {
