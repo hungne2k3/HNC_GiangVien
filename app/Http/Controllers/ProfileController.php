@@ -28,12 +28,14 @@ class ProfileController extends Controller
         // Lấy thông tin giảng viên từ Service
         $giangVien = $this->userServices->lecturerInfomation();
         $nganh = $this->userServices->getNganh();
+        $danToc = $this->userServices->getDanToc();
         
         // dd($giangVien);
         return view('profile.thongtinGiangvien', [
             'title' => 'Thông tin giảng viên',
             'giangVien' => $giangVien,
-            'nganh' => $nganh
+            'nganh' => $nganh,
+            'dantoc' => $danToc
         ]);
     }
 

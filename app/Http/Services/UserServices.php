@@ -61,4 +61,29 @@ class UserServices
         // dd($nganh);
         return $nganh;
     }
+
+
+    public function getDanToc()
+    {
+        
+       // Lấy giảng viên hiện tại
+       $user = Auth::user();
+       $maGV = $user->MaGV;
+
+       if (!$maGV) {
+           return [];
+       }
+       $giangVien = DB::table("hoso_giangvien")
+       ->select('DanToc_ID')
+       ->where("MaGV", $maGV)->first();
+       $danTocID = $giangVien->DanToc_ID;
+
+
+       $danToc = DB::table('tb_dantoc')
+       ->select('tb_dantoc.*')
+       ->where('MaDanToc', $danTocID)
+       -> first();
+
+        return $danToc;
+    }
 }

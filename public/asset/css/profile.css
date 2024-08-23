@@ -47,7 +47,7 @@
 .info-common, .info-professional-level, .info-health-condition {
     display: flex;
     flex-wrap: wrap;
-    padding: 0 15px;
+    padding: 0 0 0 15px;
 }
 
 .info-professional-level, .info-health-condition {
@@ -75,7 +75,7 @@
     color: #128080;
 }
 
-input.form-input {
+input.form-input, input.input--not-edit {
     border:none;
     outline: none;
     border: 1px solid #ccc;

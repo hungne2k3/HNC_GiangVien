@@ -96,4 +96,5 @@ class User extends Authenticatable
     {
         return $this->hasMany(GiangVienMonHoc::class, 'MaGV', 'MaGV');
     }
+
 }
