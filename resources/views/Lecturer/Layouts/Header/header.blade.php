@@ -25,7 +25,7 @@
                                     <a href="/diem-danh-sinh-vien" class="link link--black dropdown--link">Điểm danh
                                         sinh viên</a>
                                 </li>
-                                <li class="dropdown__item"><a href="./nhapdiemthanhphan.html"
+                                <li class="dropdown__item"><a href="/diem-thanh-phan"
                                         class="link link--black dropdown--link">Nhập điểm thành phần</a></li>
                                 <li class="dropdown__item"><a href="#"
                                         class="link link--black dropdown--link">Nhập điểm thi</a></li>

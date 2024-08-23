@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Lecturer\ComponentPointsController;
 use App\Http\Controllers\Lecturer\ListRollCallController;
 use App\Http\Controllers\Lecturer\StudentAttendanceController;
 use Illuminate\Support\Facades\Route;
@@ -24,6 +25,9 @@ Route::middleware(['auth', 'lecturer'])->group(function () {
     Route::post('/import-rollcall', [StudentAttendanceController::class, 'import'])->name('import.rollcall');
     // export
     Route::get('/export-rollcall/{monHocKyId}', [StudentAttendanceController::class, 'export'])->name('export.rollcall');
+
+    // Điểm thành phần
+    Route::get('/diem-thanh-phan', [ComponentPointsController::class, 'index']);
 });
 
 require __DIR__ . '/auth.php';
