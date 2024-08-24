@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Lecturer\ListOfFormsController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Lecturer\ComponentPointsController;
@@ -33,6 +34,9 @@ Route::middleware(['auth', 'lecturer'])->group(function () {
     // Điểm thành phần
     Route::get('/diem-thanh-phan', [ComponentPointsController::class, 'index']);
     Route::post('/diem-thanh-phan', [ComponentPointsController::class, 'filters']);
+
+    // Danh sách biểu mẫu
+    Route::get('/danh-sach-bieu-mau', [ListOfFormsController::class, 'index']);
 });
 
 require __DIR__ . '/auth.php';

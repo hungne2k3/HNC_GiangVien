@@ -34,7 +34,7 @@
                         <li class="nav__item">
                             <a class="link link--primary nav--link dropdown" href="#">Danh mục biểu mẫu</a>
                             <ul class="dropdown-menu" style="min-width: 200px;">
-                                <li class="dropdown__item"><a href="./bieumau.html"
+                                <li class="dropdown__item"><a href="/danh-sach-bieu-mau"
                                         class="link link--black dropdown--link">Danh sách biểu mẫu</a></li>
                             </ul>
                         </li>
