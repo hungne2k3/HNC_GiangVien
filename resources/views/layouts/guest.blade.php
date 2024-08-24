@@ -28,7 +28,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body>
+<body style="overflow: hidden">
     <div class="left-container">
         <div class="logo-container">
             <img src="{{ asset('asset') }}/images/logoHNC.png" alt="Logo">
