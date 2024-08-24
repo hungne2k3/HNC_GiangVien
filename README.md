@@ -70,6 +70,58 @@ php artisan key:generate
 ```
 php artisan serve
 ```
+
+10. Cài đặt và cấu hình phpoffice/phpspreadsheet ^2.2
+```
+composer require phpoffice/phpspreadsheet:^2.2
+```
+
+11. kích hoạt ext-gd trong XAMPP:
+```
+-- Mở file php.ini:
+
+-- Tìm file php.ini của XAMPP trong thư mục:
+-- C:\xampp\php\php.ini
+-- Tìm và kích hoạt ext-gd:
+
+-- Mở file php.ini bằng một trình soạn thảo văn bản (như Notepad++ hoặc Visual Studio Code).
+-- Tìm dòng sau trong file php.ini (sử dụng Ctrl+F để tìm):
+ini
+-- Sao chép mã
+-- ;extension=gd
+-- Bỏ dấu chấm phẩy ; ở đầu dòng để kích hoạt extension:
+ini
+-- Sao chép mã
+-- extension=gd
+```
+
+12. kích hoạt ext-zip trong XAMPP
+```
+Mở file php.ini:
+
+Tìm file php.ini của XAMPP. Thông thường nó nằm trong thư mục:
+C:\xampp\php\php.ini
+Kích hoạt extension ext-zip:
+
+Mở file php.ini bằng một trình soạn thảo văn bản (như Notepad++ hoặc VSCode).
+Tìm dòng sau trong file php.ini:
+ini
+Sao chép mã
+;extension=zip
+Bỏ dấu chấm phẩy ; ở đầu dòng để kích hoạt extension:
+ini
+Sao chép mã
+extension=zip
+Khởi động lại Apache:
+
+Sau khi đã kích hoạt ext-zip, lưu lại file php.ini và khởi động lại Apache thông qua XAMPP Control Panel để các thay đổi có hiệu lực.
+```
+
+13. Chạy lại Composer
+
+```
+composer require phpoffice/phpspreadsheet:^2.2
+```
 Truy cập ứng dụng thông qua trình duyệt web tại địa chỉ sau: **http://localhost:8000**
 
 
