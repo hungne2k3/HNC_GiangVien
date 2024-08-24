@@ -3,14 +3,8 @@
 namespace App\Http\Services;
 
 use App\Models\DanhSachDiemDanh;
-use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-use App\Models\Lop;
-use App\Models\KyHoc;
-use App\Models\DanhSachMonHoc;
-use App\Models\GiangVienMonHoc;
-use App\Models\MonHocKy;
 
 class ListRollCallServices
 {
