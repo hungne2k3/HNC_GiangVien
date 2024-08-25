@@ -37,6 +37,10 @@ Route::middleware(['auth', 'lecturer'])->group(function () {
 
     // Danh sách biểu mẫu
     Route::get('/danh-sach-bieu-mau', [ListOfFormsController::class, 'index']);
+
+    Route::post('/danh-sach-bieu-mau/{id}', [ListOfFormsController::class, 'upload'])->name('files.upload');
+
+    Route::get('/danh-sach-bieu-mau/{id}', [ListOfFormsController::class, 'download'])->name('files.download');
 });
 
 require __DIR__ . '/auth.php';
