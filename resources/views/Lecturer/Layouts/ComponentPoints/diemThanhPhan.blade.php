@@ -65,7 +65,6 @@
                                 <th>Số TC</th>
                                 <th>Số tiết HP</th>
                                 <th>Sĩ số</th>
-                                <th>Thời gian nhập điểm</th>
                                 <th colspan="3">#</th>
                             </tr>
                         </thead>
@@ -78,8 +77,7 @@
                                     <td>{{ $item->SoTin }}</td>
                                     <td>{{ $item->SoTiet }}</td>
                                     <td>40</td>
-                                    <td>01/08/2024 - 15/08/2024</td>
-                                    <td><a href="./danhsachdiemdanh.html" class="btn btn--secondary table__btn ">Nhập
+                                    <td><a href="/nhap-diem-thanh-phan" class="btn btn--secondary table__btn ">Nhập
                                             điểm</a>
                                     </td>
                                     <td><button class="btn btn--info table__btn">Import Điểm</button></td>

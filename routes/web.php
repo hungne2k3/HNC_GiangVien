@@ -4,6 +4,7 @@ use App\Http\Controllers\Lecturer\ListOfFormsController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Lecturer\ComponentPointsController;
+use App\Http\Controllers\Lecturer\EnterComponentPointsController;
 use App\Http\Controllers\Lecturer\ListRollCallController;
 use App\Http\Controllers\Lecturer\StudentAttendanceController;
 use Illuminate\Support\Facades\Route;
@@ -34,6 +35,9 @@ Route::middleware(['auth', 'lecturer'])->group(function () {
     // Điểm thành phần
     Route::get('/diem-thanh-phan', [ComponentPointsController::class, 'index']);
     Route::post('/diem-thanh-phan', [ComponentPointsController::class, 'filters']);
+
+    // Nhập điểm thành phần
+    Route::get('/nhap-diem-thanh-phan', [EnterComponentPointsController::class, 'index']);
 
     // Danh sách biểu mẫu
     Route::get('/danh-sach-bieu-mau', [ListOfFormsController::class, 'index']);
