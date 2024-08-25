@@ -9,7 +9,7 @@
                         <thead class="table__heading heading--primary">
                             <tr>
                                 <th>Tên biểu mẫu</th>
-                                <th>File</th>
+                                {{-- <th>File</th> --}}
                                 <th>#</th>
                             </tr>
                         </thead>
@@ -18,7 +18,7 @@
                                 <tr class="table__row">
                                     <td>{{ $item->TenBieuMau }}</td>
 
-                                    <td>
+                                    {{-- <td>
                                         <form action="{{ route('files.upload', ['id' => $item->id]) }}" method="POST"
                                             enctype="multipart/form-data">
                                             @csrf
@@ -29,7 +29,7 @@
                                                 Lưu
                                             </button>
                                         </form>
-                                    </td>
+                                    </td> --}}
 
                                     <td class="flex justify-center content-center">
                                         <form action="{{ route('files.download', ['id' => $item->id]) }}" method="GET">
