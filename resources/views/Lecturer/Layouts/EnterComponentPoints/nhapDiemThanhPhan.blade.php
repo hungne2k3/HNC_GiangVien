@@ -8,8 +8,10 @@
                     <h3>Nhập điểm thành phần</h3>
 
                     <div class="content__desc">
-                        <label>Tên môn: </label>
-                        <label>Lớp: </label>
+                        @if ($getComponentPoints)
+                            <label>Tên môn: {{ $getComponentPoints['diemThanhPhan']->TenMon }}</label>
+                            <label>Lớp: {{ $getComponentPoints['diemThanhPhan']->TenLop }}</label>
+                        @endif
                     </div>
                 </div>
 
@@ -21,19 +23,65 @@
                                 <th>STT</th>
                                 <th>Tên môn học</th>
                                 <th>Họ tên</th>
-                                <th>DiemTX1</th>
-                                <th>DiemDK1</th>
-                                <th>DiemTX2</th>
-                                <th>DiemDK2</th>
-                                <th>DiemTB</th>
+                                <th style="width: 10%">DiemTX1</th>
+                                <th style="width: 10%">DiemDK1</th>
+                                <th style="width: 10%">DiemTX2</th>
+                                <th style="width: 10%">DiemDK2</th>
+                                <th style="width: 10%">DiemTB</th>
                             </tr>
                         </thead>
                         <tbody class="text-center">
-                            <tr class="tr__title">
-                                <td></td>
-                            </tr>
+                            @foreach ($getComponentPoints['dataDiemThanhPhan'] as $index => $item)
+                                <tr class="tr__title">
+                                    <td>{{ $index + 1 }}</td>
+                                    <td>{{ $item->TenMon }}</td>
+                                    <td>{{ $item->HoDem }} {{ $item->Ten }}</td>
+                                    <td>
+                                        <input
+                                            style="padding: 6px 10px;
+                                            width: 100%;
+                                            outline: none;
+                                            border: none;"
+                                            type="text" placeholder="Nhập DiemTX1">
+                                    </td>
 
+                                    <td>
+                                        <input
+                                            style="padding: 6px 10px;
+                                            width: 100%;
+                                            outline: none;
+                                            border: none;"
+                                            type="text" placeholder="Nhập DiemDK1">
+                                    </td>
 
+                                    <td>
+                                        <input
+                                            style="padding: 6px 10px;
+                                            width: 100%;
+                                            outline: none;
+                                            border: none;"
+                                            type="text" placeholder="Nhập DiemTX2">
+                                    </td>
+
+                                    <td>
+                                        <input
+                                            style="padding: 6px 10px;
+                                            width: 100%;
+                                            outline: none;
+                                            border: none;"
+                                            type="text" placeholder="Nhập DiemDK2">
+                                    </td>
+
+                                    <td>
+                                        <input
+                                            style="padding: 6px 10px;
+                                            width: 100%;
+                                            outline: none;
+                                            border: none;"
+                                            type="text" placeholder="Nhập DiemTB">
+                                    </td>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
 

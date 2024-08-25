@@ -77,7 +77,8 @@
                                     <td>{{ $item->SoTin }}</td>
                                     <td>{{ $item->SoTiet }}</td>
                                     <td>40</td>
-                                    <td><a href="/nhap-diem-thanh-phan" class="btn btn--secondary table__btn ">Nhập
+                                    <td><a href="/nhap-diem-thanh-phan/{{ $item->id }}"
+                                            class="btn btn--secondary table__btn ">Nhập
                                             điểm</a>
                                     </td>
                                     <td><button class="btn btn--info table__btn">Import Điểm</button></td>

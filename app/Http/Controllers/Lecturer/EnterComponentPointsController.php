@@ -4,13 +4,23 @@ namespace App\Http\Controllers\Lecturer;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Services\EnterComponentPointsServices;
 
 class EnterComponentPointsController extends Controller
 {
-    public function index()
+    protected $enterComponentPointsServices;
+
+    public function __construct(EnterComponentPointsServices $enterComponentPointsServices)
+    {
+        $this->enterComponentPointsServices = $enterComponentPointsServices;
+    }
+
+    public function index($monHocKyId)
     {
         $title = 'Nhập điểm thành phần';
 
-        return view('Lecturer.Layouts.EnterComponentPoints.nhapDiemThanhPhan', compact('title'));
+        $getComponentPoints = $this->enterComponentPointsServices->getDataComponentPoints($monHocKyId);
+
+        return view('Lecturer.Layouts.EnterComponentPoints.nhapDiemThanhPhan', compact('title', 'getComponentPoints'));
     }
 }

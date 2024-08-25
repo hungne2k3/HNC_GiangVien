@@ -37,7 +37,7 @@ Route::middleware(['auth', 'lecturer'])->group(function () {
     Route::post('/diem-thanh-phan', [ComponentPointsController::class, 'filters']);
 
     // Nhập điểm thành phần
-    Route::get('/nhap-diem-thanh-phan', [EnterComponentPointsController::class, 'index']);
+    Route::get('/nhap-diem-thanh-phan/{id}', [EnterComponentPointsController::class, 'index']);
 
     // Danh sách biểu mẫu
     Route::get('/danh-sach-bieu-mau', [ListOfFormsController::class, 'index']);
