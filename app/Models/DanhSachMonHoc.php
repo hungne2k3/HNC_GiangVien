@@ -34,4 +34,14 @@ class DanhSachMonHoc extends Model
     {
         return $this->hasMany(DanhSachDiemDanh::class, 'MaMonHoc');
     }
+
+    public function danhsach_diemthanhphan()
+    {
+        return $this->hasMany(DanhSachDiemThanhPhan::class, 'MaMonHoc');
+    }
+
+    public function danhsach_diemthi()
+    {
+        return $this->hasMany(DanhSachDiemThi::class, 'MaMonHoc');
+    }
 }

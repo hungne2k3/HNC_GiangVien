@@ -42,4 +42,14 @@ class SinhVien extends Model
     {
         return $this->belongsToMany(KyHoc::class, 'lophoc', 'SinhVien_ID', 'KyHoc_ID');
     }
+
+    public function danhsach_diemthanhphan()
+    {
+        return $this->hasMany(DanhSachDiemThanhPhan::class, 'MaSV');
+    }
+
+    public function danhsach_diemthi()
+    {
+        return $this->hasMany(DanhSachDiemThi::class, 'MaSV');
+    }
 }
