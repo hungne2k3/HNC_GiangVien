@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col l-12 flex flex-col content-center" style="position: relative;">
                 <div class="content__title">
-                    <h2>Điểm danh sinh viên</h2>
+                    <h2>ĐIỂM DANH SINH VIÊN</h2>
                     <div class="content__desc">
                         @if ($danhSachDiemDanh)
                             <label>Tên môn: {{ $danhSachDiemDanh['diemDanh']->TenMon }}</label>
@@ -114,7 +114,7 @@
                                                         do"
                                                         {{ $danhsach->SoTietDiMuon ===
                                                         'Nghỉ không lí
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        do'
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        do'
                                                             ? 'selected'
                                                             : '' }}>
                                                         Nghỉ không lí
@@ -149,24 +149,6 @@
             </div>
         </div>
     </div>
-
-    <script>
-        document.querySelector('form').addEventListener('submit', function(event) {
-            // Lấy tất cả các thẻ select trong form
-            const selects = document.querySelectorAll('select');
-
-            selects.forEach(function(select) {
-                // Lấy option đã được chọn
-                const selectedOption = select.options[select.selectedIndex];
-
-                // Tìm input ẩn tương ứng với select
-                const hiddenInput = select.parentElement.querySelector('.hidden-input');
-
-                // Gán giá trị text của option đã chọn cho input ẩn
-                hiddenInput.value = selectedOption.text.trim();
-            });
-        });
-    </script>
 @endsection
 
 

@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col l-12 flex flex-col content-center">
                 <div class="content__title">
-                    <h2>Danh sách môn học</h2>
+                    <h2>DANH SÁCH MÔN HỌC</h2>
                 </div>
                 <form action="{{ url('/diem-danh-sinh-vien') }}" method="POST">
                     <div class="search-container">
