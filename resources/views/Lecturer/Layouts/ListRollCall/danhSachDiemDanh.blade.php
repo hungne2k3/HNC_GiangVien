@@ -58,7 +58,15 @@
                                         <td>{{ $danhsach->HoDem }} {{ $danhsach->Ten }}</td>
                                         <td>{{ $danhsach->TenMon }}</td>
                                         <td>{{ $danhsach->TenLop }}</td>
-                                        <td>{{ $danhsach->NgayDiemDanh }}</td>
+                                        <td>
+                                            <input type="date" name="NgayDiemDanh[{{ $danhsach->id }}]"
+                                                {{-- $danhsach->NgayDiemDanh: Giá trị này có thể là null, một chuỗi, hoặc một đối tượng Carbon.  --}} {{-- (is_string($danhsach->NgayDiemDanh): có phải 1 chuỗi hay không --}} {{-- \Carbon\Carbon::parse($danhsach->NgayDiemDanh)->format('Y-m-d'):phương thức Carbon::parse() sẽ chuyển đổi chuỗi đó thành một đối tượng Carbon. --}}
+                                                value="{{ $danhsach->NgayDiemDanh ? (is_string($danhsach->NgayDiemDanh) ? \Carbon\Carbon::parse($danhsach->NgayDiemDanh)->format('Y-m-d') : $danhsach->NgayDiemDanh->format('Y-m-d')) : $currentDate->format('Y-m-d') }}"
+                                                style="padding: 10px;
+                                            border-radius: 4px;
+                                            outline: none;
+                                            border: 1px solid #ccc;">
+                                        </td>
                                         <td>{{ $danhsach->Ca }}</td>
                                         <td>{{ $danhsach->TietBD }} - {{ $danhsach->TietKT }}</td>
                                         <td>
@@ -106,7 +114,7 @@
                                                         do"
                                                         {{ $danhsach->SoTietDiMuon ===
                                                         'Nghỉ không lí
-                                                                                                                                                                                                                                                                                        do'
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        do'
                                                             ? 'selected'
                                                             : '' }}>
                                                         Nghỉ không lí

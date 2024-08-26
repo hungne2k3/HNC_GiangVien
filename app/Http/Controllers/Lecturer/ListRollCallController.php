@@ -44,24 +44,27 @@ class ListRollCallController extends Controller
         // Lấy tất cả dữ liệu từ request (các giá trị từ form gửi lên)
         $data = $request->all();
 
-        // $id: Khóa của mảng, là ID của bản ghi điểm danh (DanhSachDiemDanh).
-        // $soTietDiMuon: Giá trị của số tiết đi muộn cho sinh viên tương ứng với ID đó.
-        foreach ($data['SoTietDiMuon'] as $id => $soTietDiMuon) {
-            $diemDanh = DanhSachDiemDanh::find($id);
+        try {
+            // $id: Khóa của mảng, là ID của bản ghi điểm danh (DanhSachDiemDanh).
+            // $soTietDiMuon: Giá trị của số tiết đi muộn cho sinh viên tương ứng với ID đó.
+            foreach ($data['SoTietDiMuon'] as $id => $soTietDiMuon) {
+                $diemDanh = DanhSachDiemDanh::find($id);
 
-            if ($diemDanh) {
-                $diemDanh->SoTietDiMuon = $soTietDiMuon;
-                // Tìm bản ghi
-                $diemDanh->GhiChu = $data['GhiChu'][$id] ?? null;
+                if ($diemDanh) {
+                    // cập nhập NgayDiemDanh nếu có từ form và ngược lại
+                    $diemDanh->NgayDiemDanh = $data['NgayDiemDanh'][$id] ?? Carbon::now()->format('Y-m-d');
 
-                try {
+                    $diemDanh->SoTietDiMuon = $soTietDiMuon;
+                    // Tìm bản ghi
+                    $diemDanh->GhiChu = $data['GhiChu'][$id] ?? null;
+
                     $diemDanh->save(); // lưu
-                    toastify()->success('Lưu điểm danh thành công!');
 
-                } catch (\Exception $e) {
-                    toastify()->error('Lỗi khi lưu điểm điểm danh');
                 }
             }
+            toastify()->success('Lưu điểm danh thành công!');
+        } catch (\Exception $e) {
+            toastify()->error('lưu điểm danh thất bại!');
         }
 
 
