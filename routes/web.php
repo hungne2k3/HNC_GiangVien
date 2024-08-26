@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Lecturer\ExamScheduleController;
 use App\Http\Controllers\Lecturer\ListOfFormsController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HomeController;
@@ -49,7 +50,8 @@ Route::middleware(['auth', 'lecturer'])->group(function () {
 
     Route::get('/danh-sach-bieu-mau/{id}', [ListOfFormsController::class, 'download'])->name('files.download');
 
-
+    // lịch coi thi
+    Route::get('/tra-cuu-lich-coi-thi', [ExamScheduleController::class, 'index']);
 });
 
 require __DIR__ . '/auth.php';

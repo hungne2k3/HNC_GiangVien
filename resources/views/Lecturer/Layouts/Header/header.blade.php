@@ -12,7 +12,7 @@
                             <ul class="dropdown-menu" style="min-width: 200px;">
                                 <li class="dropdown__item"><a href="#" class="link link--black dropdown--link">Xem
                                         thời khoá biểu</a></li>
-                                <li class="dropdown__item"><a href="./lichcoithi.html"
+                                <li class="dropdown__item"><a href="/tra-cuu-lich-coi-thi"
                                         class="link link--black dropdown--link">Tra cứu lịch coi thi</a></li>
                                 <li class="dropdown__item"><a href="#" class="link link--black dropdown--link">Sổ
                                         nhật ký giảng dạy</a></li>
@@ -56,13 +56,6 @@
 
                                 <li class="dropdown__item">
                                     <a href="/profile" class="link link--black dropdown--link">
-                                        <span class="flex content-center"><svg class="nav__icon" style="fill: #000"
-                                                xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon"
-                                                viewBox="0 0 512 512">
-                                                <path
-                                                    d="M368 192h-16v-80a96 96 0 10-192 0v80h-16a64.07 64.07 0 00-64 64v176a64.07 64.07 0 0064 64h224a64.07 64.07 0 0064-64V256a64.07 64.07 0 00-64-64zm-48 0H192v-80a64 64 0 11128 0z">
-                                                </path>
-                                            </svg></span>
                                         Đổi mật khẩu
                                     </a>
                                 </li>
