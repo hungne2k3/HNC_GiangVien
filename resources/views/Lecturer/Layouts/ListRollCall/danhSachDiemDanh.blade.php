@@ -66,48 +66,57 @@
                                                 <select name="SoTietDiMuon[{{ $danhsach->id }}]" id="search__select-option"
                                                     class="select-option search__select-option">
                                                     <option value="1">-- Chọn số tiết --</option>
-                                                    <option value="2"
-                                                        {{ $danhsach->SoTietDiMuon === 2 ? 'selected' : '' }}>
+                                                    <option value="Đi học đầy đủ"
+                                                        {{ $danhsach->SoTietDiMuon === 'Đi học đầy đủ' ? 'selected' : '' }}>
                                                         Đi học đầy đủ
-                                                        - 0
                                                     </option>
 
-                                                    <option value="3"
-                                                        {{ $danhsach->SoTietDiMuon === 3 ? 'selected' : '' }}>
+                                                    <option value="Vắng - 1 tiết"
+                                                        {{ $danhsach->SoTietDiMuon === 'Vắng - 1 tiết' ? 'selected' : '' }}>
                                                         Vắng - 1 tiết
                                                     </option>
 
-                                                    <option value="4"
-                                                        {{ $danhsach->SoTietDiMuon === 4 ? 'selected' : '' }}>
+                                                    <option value="Vắng - 2 tiết"
+                                                        {{ $danhsach->SoTietDiMuon === 'Vắng - 2 tiết' ? 'selected' : '' }}>
                                                         Vắng - 2 tiết
                                                     </option>
 
-                                                    <option value="5"
-                                                        {{ $danhsach->SoTietDiMuon === 5 ? 'selected' : '' }}>
+                                                    <option value="Vắng - 3 tiết"
+                                                        {{ $danhsach->SoTietDiMuon === 'Vắng - 3 tiết' ? 'selected' : '' }}>
                                                         Vắng - 3 tiết
                                                     </option>
 
-                                                    <option value="6"
-                                                        {{ $danhsach->SoTietDiMuon === 6 ? 'selected' : '' }}>
+                                                    <option value="Vắng - 4 tiết"
+                                                        {{ $danhsach->SoTietDiMuon === 'Vắng - 4 tiết' ? 'selected' : '' }}>
                                                         Vắng - 4 tiết
                                                     </option>
 
-                                                    <option value="7"
-                                                        {{ $danhsach->SoTietDiMuon === 7 ? 'selected' : '' }}>
+                                                    <option value="Vắng - 5 tiết"
+                                                        {{ $danhsach->SoTietDiMuon === 'Vắng - 5 tiết' ? 'selected' : '' }}>
                                                         Vắng - 5 tiết
                                                     </option>
 
-                                                    <option value="8"
-                                                        {{ $danhsach->SoTietDiMuon === 8 ? 'selected' : '' }}>
+                                                    <option value="Nghỉ có lí do"
+                                                        {{ $danhsach->SoTietDiMuon === 'Nghỉ có lí do' ? 'selected' : '' }}>
                                                         Nghỉ có lí do
                                                     </option>
 
-                                                    <option value="9"
-                                                        {{ $danhsach->SoTietDiMuon === 9 ? 'selected' : '' }}>
+                                                    <option
+                                                        value="Nghỉ không lí
+                                                        do"
+                                                        {{ $danhsach->SoTietDiMuon ===
+                                                        'Nghỉ không lí
+                                                                                                                do'
+                                                            ? 'selected'
+                                                            : '' }}>
                                                         Nghỉ không lí
                                                         do
                                                     </option>
                                                 </select>
+
+                                                <!-- Input ẩn để lưu giá trị text của option được chọn -->
+                                                <input type="hidden" name="SoTietDiMuonText[{{ $danhsach->id }}]"
+                                                    class="hidden-input">
                                             </div>
                                         </td>
                                         <td colspan="2">
@@ -132,7 +141,27 @@
             </div>
         </div>
     </div>
+
+    <script>
+        document.querySelector('form').addEventListener('submit', function(event) {
+            // Lấy tất cả các thẻ select trong form
+            const selects = document.querySelectorAll('select');
+
+            selects.forEach(function(select) {
+                // Lấy option đã được chọn
+                const selectedOption = select.options[select.selectedIndex];
+
+                // Tìm input ẩn tương ứng với select
+                const hiddenInput = select.parentElement.querySelector('.hidden-input');
+
+                // Gán giá trị text của option đã chọn cho input ẩn
+                hiddenInput.value = selectedOption.text.trim();
+            });
+        });
+    </script>
 @endsection
+
+
 
 @push('flatpickr')
     <script>

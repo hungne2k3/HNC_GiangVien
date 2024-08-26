@@ -53,11 +53,17 @@ class ListRollCallController extends Controller
                 $diemDanh->SoTietDiMuon = $soTietDiMuon;
                 // Tìm bản ghi
                 $diemDanh->GhiChu = $data['GhiChu'][$id] ?? null;
-                $diemDanh->save(); // lưu
+
+                try {
+                    $diemDanh->save(); // lưu
+                    toastify()->success('Lưu điểm danh thành công!');
+
+                } catch (\Exception $e) {
+                    toastify()->error('Lỗi khi lưu điểm điểm danh');
+                }
             }
         }
 
-        toastify()->success('Lưu điểm danh thành công!');
 
         return redirect()->route('diemDanhSinhVien');
     }
