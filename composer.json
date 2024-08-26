@@ -40,7 +40,8 @@
             "app/Http/Services/ListRollCallServices.php",
             "app/Http/Services/ComponentPointsServices.php",
             "app/Http/Services/EnterComponentPointsServices.php",
-            "app/Exports/DanhSachDiemDanhExport.php"
+            "app/Exports/DanhSachDiemDanhExport.php",
+            "app/Exports/DiemThanhPhanExports.php"
         ]
     },
     "scripts": {

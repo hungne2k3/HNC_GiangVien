@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Lecturer;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Services\ComponentPointsServices;
+use App\Exports\DiemThanhPhanExports;
+
 
 class ComponentPointsController extends Controller
 {
@@ -37,5 +39,12 @@ class ComponentPointsController extends Controller
         $getInfo = $this->componentPointsServices->getInfo($filters);
 
         return view('Lecturer.Layouts.ComponentPoints.diemThanhPhan', compact('title', 'getInfo'));
+    }
+
+    public function export($monHocKyId)
+    {
+        // Khởi tạo đối tượng DiemThanhPhanExport và gọi phương thức export
+        $export = new DiemThanhPhanExports();
+        return $export->export($monHocKyId);
     }
 }

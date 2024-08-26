@@ -82,7 +82,8 @@
                                             điểm</a>
                                     </td>
                                     <td><button class="btn btn--info table__btn">Import Điểm</button></td>
-                                    <td><button class="btn btn--success table__btn">Export Điểm</button></td>
+                                    <td><a href="{{ route('export.point', ['monHocKyId' => $item->id]) }}"
+                                            class="btn btn--success table__btn">Export Điểm</a></td>
                                 </tr>
                             @endforeach
                         </tbody>

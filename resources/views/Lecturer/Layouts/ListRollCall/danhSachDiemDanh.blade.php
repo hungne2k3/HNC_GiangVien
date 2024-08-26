@@ -106,7 +106,7 @@
                                                         do"
                                                         {{ $danhsach->SoTietDiMuon ===
                                                         'Nghỉ không lí
-                                                                                                                do'
+                                                                                                                                                                                                                                do'
                                                             ? 'selected'
                                                             : '' }}>
                                                         Nghỉ không lí

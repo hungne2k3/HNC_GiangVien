@@ -2,6 +2,7 @@
 
 namespace App\Http\Services;
 
+use App\Models\DanhSachDiemThanhPhan;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\Models\GiangVienMonHoc;
@@ -92,5 +93,32 @@ class ComponentPointsServices
         $dataInfoQuery = $dataQuery->get();
 
         return compact('gv', 'kyHoc', 'monHoc', 'monHocKy', 'dataInfoQuery');
+    }
+
+    public function getDataDiemThanhPhan($monHocKyId)
+    {
+        $dataDiemThanhPhan = DanhSachDiemThanhPhan::query()
+            ->join('danhsach_monhoc', 'danhsach_monhoc.MaMonHoc', '=', 'danhsach_diemthanhphan.MaMonHoc')
+            ->join('sinhvien', 'sinhvien.MaSV', '=', 'danhsach_diemthanhphan.MaSV')
+            ->join('monhoc_ky', 'danhsach_monhoc.MaMonHoc', '=', 'monhoc_ky.MaMonHoc')
+            ->join('giangvien_monhoc', 'monhoc_ky.id', '=', 'giangvien_monhoc.MonHocKy_ID')
+            ->join('lop', 'giangvien_monhoc.MaLop', '=', 'lop.MaLop')
+            ->join('tb_hoso', 'sinhvien.HoSo_ID', '=', 'tb_hoso.id')
+            ->where('monhoc_ky.id', $monHocKyId)
+            ->select(
+                'sinhvien.MaSV',
+                'danhsach_monhoc.TenMon',
+                'danhsach_monhoc.MaMonHoc',
+                'tb_hoso.HoDem',
+                'tb_hoso.Ten',
+                'danhsach_diemthanhphan.DiemTX1',
+                'danhsach_diemthanhphan.DiemDK1',
+                'danhsach_diemthanhphan.DiemTX2',
+                'danhsach_diemthanhphan.DiemDK2',
+                'danhsach_diemthanhphan.DiemTB',
+            )
+            ->get();
+
+        return $dataDiemThanhPhan;
     }
 }

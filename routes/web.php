@@ -35,6 +35,8 @@ Route::middleware(['auth', 'lecturer'])->group(function () {
     // Điểm thành phần
     Route::get('/diem-thanh-phan', [ComponentPointsController::class, 'index'])->name('points.component');
     Route::post('/diem-thanh-phan', [ComponentPointsController::class, 'filters']);
+    // export
+    Route::get('/export-point/{monHocKyId}', [ComponentPointsController::class, 'export'])->name('export.point');
 
     // Nhập điểm thành phần
     Route::get('/nhap-diem-thanh-phan/{id}', [EnterComponentPointsController::class, 'index']);
@@ -46,6 +48,8 @@ Route::middleware(['auth', 'lecturer'])->group(function () {
     Route::post('/danh-sach-bieu-mau/{id}', [ListOfFormsController::class, 'upload'])->name('files.upload');
 
     Route::get('/danh-sach-bieu-mau/{id}', [ListOfFormsController::class, 'download'])->name('files.download');
+
+
 });
 
 require __DIR__ . '/auth.php';
