@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col l-12 flex flex-col content-center">
                 <div class="content__title">
-                    <h3>Điểm thành phần</h3>
+                    <h2>Điểm thành phần</h2>
                 </div>
 
                 <form action="{{ url('/diem-thanh-phan') }}" method="POST">

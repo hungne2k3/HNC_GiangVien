@@ -499,8 +499,8 @@ body.no-scroll {
   flex-direction: column;
 }
 
-.content__title h3 {
-  color: #0c8281;
+.content__title h2 {
+  color: #000;
 }
 
 .content__desc {

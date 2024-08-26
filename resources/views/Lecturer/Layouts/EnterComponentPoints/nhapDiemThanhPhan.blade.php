@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col l-12 flex flex-col content-center">
                 <div class="content__title">
-                    <h3>Nhập điểm thành phần</h3>
+                    <h2>Nhập điểm thành phần</h2>
 
                     <div class="content__desc">
                         @if ($getComponentPoints)

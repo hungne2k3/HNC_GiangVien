@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col l-12 flex flex-col content-center" style="position: relative;">
                 <div class="content__title">
-                    <h3>Điểm danh sinh viên</h3>
+                    <h2>Điểm danh sinh viên</h2>
                     <div class="content__desc">
                         @if ($danhSachDiemDanh)
                             <label>Tên môn: {{ $danhSachDiemDanh['diemDanh']->TenMon }}</label>
@@ -106,7 +106,7 @@
                                                         do"
                                                         {{ $danhsach->SoTietDiMuon ===
                                                         'Nghỉ không lí
-                                                                                                                                                                                                                                do'
+                                                                                                                                                                                                                                                                                        do'
                                                             ? 'selected'
                                                             : '' }}>
                                                         Nghỉ không lí
