@@ -40,7 +40,9 @@ class EnterComponentPointsServices
             ->join('tb_hoso', 'sinhvien.HoSo_ID', '=', 'tb_hoso.id')
             ->where('monhoc_ky.id', $monHocKyId)
             ->select(
+                'sinhvien.MaSV',
                 'danhsach_monhoc.TenMon',
+                'danhsach_monhoc.MaMonHoc',
                 'tb_hoso.HoDem',
                 'tb_hoso.Ten',
                 'danhsach_diemthanhphan.DiemTX1',

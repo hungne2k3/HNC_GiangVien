@@ -33,11 +33,12 @@ Route::middleware(['auth', 'lecturer'])->group(function () {
     Route::get('/export-rollcall/{monHocKyId}', [StudentAttendanceController::class, 'export'])->name('export.rollcall');
 
     // Điểm thành phần
-    Route::get('/diem-thanh-phan', [ComponentPointsController::class, 'index']);
+    Route::get('/diem-thanh-phan', [ComponentPointsController::class, 'index'])->name('points.component');
     Route::post('/diem-thanh-phan', [ComponentPointsController::class, 'filters']);
 
     // Nhập điểm thành phần
     Route::get('/nhap-diem-thanh-phan/{id}', [EnterComponentPointsController::class, 'index']);
+    Route::post('/luu-diem', [EnterComponentPointsController::class, 'update'])->name('save.update');
 
     // Danh sách biểu mẫu
     Route::get('/danh-sach-bieu-mau', [ListOfFormsController::class, 'index']);
