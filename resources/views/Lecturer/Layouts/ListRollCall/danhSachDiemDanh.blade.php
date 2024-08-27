@@ -114,7 +114,7 @@
                                                         do"
                                                         {{ $danhsach->SoTietDiMuon ===
                                                         'Nghỉ không lí
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        do'
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                do'
                                                             ? 'selected'
                                                             : '' }}>
                                                         Nghỉ không lí
@@ -139,7 +139,7 @@
                     <div class="btn__action" style="margin-top: 20px;">
                         <div class="grid container">
                             <div class="row">
-                                <div class="col flex justify-end content-center" style="width:100%">
+                                <div class="col flex justify-end content-center" style="width:100%; margin-left: -15px;">
                                     <button type="submit" class="btn btn--primary">Lưu điểm danh</button>
                                 </div>
                             </div>

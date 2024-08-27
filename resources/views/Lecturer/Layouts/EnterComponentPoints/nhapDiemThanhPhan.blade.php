@@ -33,8 +33,8 @@
                                 </tr>
                                 <tr>
                                     <td style="vertical-align: middle; padding: 4px 10px; width: 8%">TX1</td>
-                                    <td style="vertical-align: middle; padding: 4px 10px; width: 8%">TX2</td>
                                     <td style="vertical-align: middle; padding: 4px 10px; width: 8%">ĐK1</td>
+                                    <td style="vertical-align: middle; padding: 4px 10px; width: 8%">TX2</td>
                                     <td style="vertical-align: middle; padding: 4px 10px; width: 8%">ĐK2</td>
                                 </tr>
                             </thead>
