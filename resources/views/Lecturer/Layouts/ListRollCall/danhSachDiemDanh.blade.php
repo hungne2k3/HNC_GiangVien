@@ -23,12 +23,13 @@
                         Ngày điểm
                         danh:
                     </label>
-                    <input type="date" id="myID" name="selected_date" class="flatpick input-date ct-shape"
-                        value="" placeholder="{{ $currentDate->format('Y-m-d') }}" readonly
+                    <input type="date" id="selected_date" name="selected_date" class="flatpick input-date ct-shape"
+                        value="{{ $currentDate->format('Y-m-d') }}" placeholder="{{ $currentDate->format('Y-m-d') }}"
                         style="padding: 10px;
                         border-radius: 4px;
                         outline: none;
-                        border: 1px solid #ccc;">
+                        border: 1px solid #ccc;"
+                        onchange="updateRollCallDates(this.value)">
                 </div>
 
                 <form action="{{ route('save.rollcall') }}" method="POST">
@@ -59,9 +60,9 @@
                                         <td>{{ $danhsach->TenMon }}</td>
                                         <td>{{ $danhsach->TenLop }}</td>
                                         <td>
-                                            <input type="date" name="NgayDiemDanh[{{ $danhsach->id }}]"
-                                                {{-- $danhsach->NgayDiemDanh: Giá trị này có thể là null, một chuỗi, hoặc một đối tượng Carbon.  --}} {{-- (is_string($danhsach->NgayDiemDanh): có phải 1 chuỗi hay không --}} {{-- \Carbon\Carbon::parse($danhsach->NgayDiemDanh)->format('Y-m-d'):phương thức Carbon::parse() sẽ chuyển đổi chuỗi đó thành một đối tượng Carbon. --}}
-                                                value="{{ $danhsach->NgayDiemDanh ? (is_string($danhsach->NgayDiemDanh) ? \Carbon\Carbon::parse($danhsach->NgayDiemDanh)->format('Y-m-d') : $danhsach->NgayDiemDanh->format('Y-m-d')) : $currentDate->format('Y-m-d') }}"
+                                            <input type="date" class="NgayDiemDanhField"
+                                                name="NgayDiemDanh[{{ $danhsach->id }}]"
+                                                value="{{ $currentDate->format('Y-m-d') }}"
                                                 style="padding: 10px;
                                             border-radius: 4px;
                                             outline: none;
@@ -114,7 +115,7 @@
                                                         do"
                                                         {{ $danhsach->SoTietDiMuon ===
                                                         'Nghỉ không lí
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                do'
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                do'
                                                             ? 'selected'
                                                             : '' }}>
                                                         Nghỉ không lí
@@ -140,7 +141,8 @@
                         <div class="grid container">
                             <div class="row">
                                 <div class="col flex justify-end content-center" style="width:100%; margin-left: -15px;">
-                                    <button type="submit" class="btn btn--primary">Lưu điểm danh</button>
+                                    <button type="submit" class="btn btn--primary">Lưu điểm danh
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -151,7 +153,17 @@
     </div>
 @endsection
 
+<script>
+    function updateRollCallDates(selectedDate) {
+        // Lấy tất cả các input NgayDiemDanh
+        const ngayDiemDanhFields = document.querySelectorAll('.NgayDiemDanhField');
 
+        // Cập nhật giá trị của từng input với ngày được chọn
+        ngayDiemDanhFields.forEach(field => {
+            field.value = selectedDate;
+        });
+    }
+</script>
 
 @push('flatpickr')
     <script>

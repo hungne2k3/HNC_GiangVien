@@ -77,13 +77,22 @@
                                     <td>{{ $item->SoTin }}</td>
                                     <td>{{ $item->SoTiet }}</td>
                                     <td>40</td>
-                                    <td><a href="/nhap-diem-thanh-phan/{{ $item->id }}"
-                                            class="btn btn--secondary table__btn ">Nhập
-                                            điểm</a>
+                                    <td style="width: 10%">
+                                        <a href="/nhap-diem-thanh-phan/{{ $item->id }}"
+                                            class="btn btn--secondary table__btn">Nhập
+                                            điểm
+                                        </a>
                                     </td>
-                                    <td><button class="btn btn--info table__btn">Import Điểm</button></td>
-                                    <td><a href="{{ route('export.point', ['monHocKyId' => $item->id]) }}"
-                                            class="btn btn--success table__btn">Export Điểm</a></td>
+
+                                    <td style="width: 11%">
+                                        <button class="btn btn--info table__btn">Import Điểm
+                                        </button>
+                                    </td>
+                                    <td style="width: 12%">
+                                        <a href="{{ route('export.point', ['monHocKyId' => $item->id]) }}"
+                                            class="btn btn--success table__btn">Export Điểm
+                                        </a>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>

@@ -535,13 +535,6 @@ body.no-scroll {
   margin-top: 5rem;
 }
 
-.table.table--secondary {}
-
-.custom-file-upload {
-  display: flex;
-  align-items: center;
-}
-
 .custom-file-upload input[type="file"] {
   display: none;
   /* Ẩn trường nhập file mặc định */

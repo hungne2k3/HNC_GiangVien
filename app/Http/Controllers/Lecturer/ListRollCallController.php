@@ -66,8 +66,6 @@ class ListRollCallController extends Controller
         } catch (\Exception $e) {
             toastify()->error('lưu điểm danh thất bại!');
         }
-
-
-        return redirect()->route('diemDanhSinhVien');
+        return redirect()->back();
     }
 }
