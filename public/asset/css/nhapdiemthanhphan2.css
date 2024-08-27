@@ -77,7 +77,8 @@ tbody td {
     padding: 6px 10px;
     width: 100%;
     outline: none;
-    border: none;
+    border: 1px solid #CCC;
+    border-radius: 4px;
 }
 
 .table__btn {

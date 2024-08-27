@@ -18,6 +18,15 @@ class EnterComponentPointsController extends Controller
 
     public function index($monHocKyId)
     {
+        $title = 'Xem điểm thành phần';
+
+        $getComponentPoints = $this->enterComponentPointsServices->getDataComponentPoints($monHocKyId);
+
+        return view('Lecturer.Layouts.EnterComponentPoints.xemDiemThanhPhan', compact('title', 'getComponentPoints'));
+    }
+
+    public function enterPoints($monHocKyId)
+    {
         $title = 'Nhập điểm thành phần';
 
         $getComponentPoints = $this->enterComponentPointsServices->getDataComponentPoints($monHocKyId);
