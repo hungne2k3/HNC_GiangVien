@@ -64,21 +64,20 @@ tbody td {
     text-align: center;
 }
 
-tbody tr:nth-child(odd) {
+/* tbody tr:nth-child(odd) {
     background-color: #DDEFFE;
-    /* Ví dụ màu nền */
-}
+} */
 
 /* tbody tr:hover {
     background-color: #F5F5F5;
 } */
 
 .input {
+    text-align: center;
     padding: 6px 10px;
     width: 100%;
     outline: none;
     border: none;
-    background-color: #DDEFFE;
 }
 
 .table__btn {

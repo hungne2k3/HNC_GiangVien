@@ -115,6 +115,7 @@ class ComponentPointsServices
                 'danhsach_diemthanhphan.DiemDK1',
                 'danhsach_diemthanhphan.DiemTX2',
                 'danhsach_diemthanhphan.DiemDK2',
+                'danhsach_diemthanhphan.DiemThi',
                 'danhsach_diemthanhphan.DiemTB',
             )
             ->get();

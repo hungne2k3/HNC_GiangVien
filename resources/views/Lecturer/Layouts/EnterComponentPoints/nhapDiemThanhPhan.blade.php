@@ -6,10 +6,10 @@
             <div class="row">
                 <div class="col l-12">
                     <h2 class="title">NHẬP ĐIỂM THÀNH PHẦN</h2>
-                    <div style="text-align: center">
+                    <div style="text-align: center; margin-top: -22px;">
                         @if ($getComponentPoints)
                             <label class="title-label">Tên môn: {{ $getComponentPoints['diemThanhPhan']->TenMon }}</label>
-                            <label class="title-label">Lớp: {{ $getComponentPoints['diemThanhPhan']->TenLop }}</label>
+                            <label class="title-label">- Lớp: {{ $getComponentPoints['diemThanhPhan']->TenLop }}</label>
                         @endif
                     </div>
                 </div>
@@ -20,7 +20,7 @@
                     <form action="{{ route('save.update') }}" method="POST">
                         @csrf
                         <table class="table">
-                            <thead class="table_th">
+                            <thead class="table_th" style="font-weight: 600">
                                 <tr>
                                     <td rowspan="2">STT</td>
                                     <td rowspan="2">Mã sinh viên</td>
@@ -55,35 +55,35 @@
                                             <input class="input" type="number" step="0.01" placeholder="Nhập DiemTX1"
                                                 name="diem[{{ $index }}][DiemTX1]" value="{{ $item->DiemTX1 }}"
                                                 onchange="calculateDiemTB({{ $index }})"
-                                                id="DiemTX1_{{ $index }}">
+                                                id="DiemTX1_{{ $index }}" required>
                                         </td>
 
                                         <td>
                                             <input class="input" type="number" step="0.01" placeholder="Nhập DiemDK1"
                                                 name="diem[{{ $index }}][DiemDK1]" value="{{ $item->DiemDK1 }}"
                                                 onchange="calculateDiemTB({{ $index }})"
-                                                id="DiemDK1_{{ $index }}">
+                                                id="DiemDK1_{{ $index }}" required>
                                         </td>
 
                                         <td>
                                             <input class="input" type="number" step="0.01" placeholder="Nhập DiemTX2"
                                                 name="diem[{{ $index }}][DiemTX2]" value="{{ $item->DiemTX2 }}"
                                                 onchange="calculateDiemTB({{ $index }})"
-                                                id="DiemTX2_{{ $index }}">
+                                                id="DiemTX2_{{ $index }}" required>
                                         </td>
 
                                         <td>
                                             <input class="input" type="number" step="0.01" placeholder="Nhập DiemDK2"
                                                 name="diem[{{ $index }}][DiemDK2]" value="{{ $item->DiemDK2 }}"
                                                 onchange="calculateDiemTB({{ $index }})"
-                                                id="DiemDK2_{{ $index }}">
+                                                id="DiemDK2_{{ $index }}" required>
                                         </td>
 
                                         <td>
                                             <input class="input" type="number" step="0.01" placeholder="Nhập DiemThi"
                                                 name="diem[{{ $index }}][DiemThi]" value="{{ $item->DiemThi }}"
                                                 onchange="calculateDiemTB({{ $index }})"
-                                                id="DiemThi_{{ $index }}">
+                                                id="DiemThi_{{ $index }}" required>
                                         </td>
 
                                         <td>
@@ -120,7 +120,7 @@
         let DiemThi = parseFloat(document.getElementById('DiemThi_' + index).value) || 0;
 
         // cong thuc tinh diem TB
-        let DiemTB = ((((DiemTX1 + DiemDK1 + DiemTX2 + DiemDK2) * 2) / 3) * 0.4) + (DiemThi * 0.6);
+        let DiemTB = (((DiemTX1 + DiemTX2 + (DiemDK1 * 2) + (DiemDK2 * 2)) / 6) * 0.4) + (DiemThi * 0.6);
 
         // hiển thị điểm trung bình trong input DiemTB
         document.getElementById('DiemTB_' + index).value = DiemTB.toFixed(2);
