@@ -6,6 +6,8 @@
 <link rel="stylesheet" href="/asset/css/grid.css">
 <link rel="stylesheet" href="/asset/css/homepage.css">
 <link rel="stylesheet" href="/asset/css/changepassword.css">
+<link rel="stylesheet" href="/asset/css/changepassword.css">
+<link rel="stylesheet" href="/asset/css/nhapdiemthanhphan2.css">
 
 {{-- thư viện lịch --}}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">

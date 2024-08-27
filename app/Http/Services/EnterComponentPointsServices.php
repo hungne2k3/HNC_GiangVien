@@ -45,11 +45,14 @@ class EnterComponentPointsServices
                 'danhsach_monhoc.MaMonHoc',
                 'tb_hoso.HoDem',
                 'tb_hoso.Ten',
+                'tb_hoso.NgayThangNamSinh',
                 'danhsach_diemthanhphan.DiemTX1',
                 'danhsach_diemthanhphan.DiemDK1',
                 'danhsach_diemthanhphan.DiemTX2',
                 'danhsach_diemthanhphan.DiemDK2',
+                'danhsach_diemthanhphan.DiemThi',
                 'danhsach_diemthanhphan.DiemTB',
+                'danhsach_diemthanhphan.GhiChu',
             )
             ->get();
 

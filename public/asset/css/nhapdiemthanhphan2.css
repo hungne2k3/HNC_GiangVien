@@ -1,0 +1,86 @@
+body {
+    font-size: 14px;
+}
+
+h2,
+h3 {
+    text-align: center;
+}
+
+h3.title {
+    line-height: 1;
+    color: red;
+    font-weight: 600;
+    font-size: 22px;
+    margin-top: -10px;
+}
+
+.title-label {
+    line-height: 1;
+    color: red;
+    font-weight: 600;
+    font-size: 22px;
+    margin-top: -10px;
+    text-align: center;
+}
+
+/* Bỏ mũi tên lên/xuống trong Chrome, Safari, Opera */
+input[type="number"] {
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+    /* Firefox */
+    appearance: none;
+    margin: 0;
+}
+
+/* Bỏ mũi tên cho các trình duyệt WebKit */
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+
+.table {
+    font-size: 14px !important;
+    box-shadow: var(--shadow);
+}
+
+.table_th {
+    background-color: #128080;
+    color: #fff;
+}
+
+.table_th tr {
+    color: inherit;
+}
+
+.table_th td {
+    font-weight: 500;
+    color: inherit;
+}
+
+tbody td {
+    text-align: center;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #DDEFFE;
+    /* Ví dụ màu nền */
+}
+
+/* tbody tr:hover {
+    background-color: #F5F5F5;
+} */
+
+.input {
+    padding: 6px 10px;
+    width: 100%;
+    outline: none;
+    border: none;
+    background-color: #DDEFFE;
+}
+
+.table__btn {
+    padding: 10px 20px;
+}
